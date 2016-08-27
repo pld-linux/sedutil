@@ -37,7 +37,7 @@ standard on BIOS machines.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
-install linux/CLI/dist/Release_*/GNU-Linux/%{name} $RPM_BUILD_ROOT%{_bindir}
+install linux/CLI/dist/Release_*/GNU-Linux/%{name}-cli $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -45,4 +45,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.md
-%attr(755,root,root) %{_bindir}/%{name}
+%attr(755,root,root) %{_bindir}/%{name}-cli
