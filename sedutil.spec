@@ -11,7 +11,7 @@ Source0:	https://github.com/Drive-Trust-Alliance/sedutil/archive/%{version}.tar.
 Patch0:		44e144ae2b85dc541bd09945311a2030ab412e98.patch
 URL:		https://github.com/Drive-Trust-Alliance/sedutil
 BuildRequires:	libstdc++-devel
-ExclusiveArch:	%{ix86} %{x8664} x32
+ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,7 +27,7 @@ standard on BIOS machines.
 
 %build
 %{__make} -C linux/CLI \
-%ifarch %{x8664} x32
+%ifarch %{x8664}
 	CONF=Release_x86_64
 %else
 	CONF=Release_i686
@@ -44,5 +44,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.md
+%doc README.md linux/PSIDRevert_LINUX.txt
 %attr(755,root,root) %{_bindir}/%{name}-cli
